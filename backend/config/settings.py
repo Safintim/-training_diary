@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'account.apps.AccountConfig',
+    'training.apps.TrainingConfig',
 ]
 
 LIBS_APP = [
@@ -148,7 +150,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# AUTH_USER_MODEL = 'app.User
+AUTH_USER_MODEL = 'account.User'
 
 EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp')
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'example@mail.ru')

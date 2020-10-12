@@ -17,6 +17,6 @@ __pycache__/
 .vscode
 static/
 templates/
-db.sqlite3
+# db.sqlite3
 *.yml
 *.yaml
