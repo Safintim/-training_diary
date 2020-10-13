@@ -1,8 +1,7 @@
 <template>
-    <b-container>
-        <b-row>
-            <b-col>
-                <TrainingProgramm />
+    <b-container >
+        <b-row class="justify-content-center">
+            <b-col v-for="index in 11" :key="index" sm="6" md="6" lg="3">
                 <TrainingProgramm />
             </b-col>
         </b-row>

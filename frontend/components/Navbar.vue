@@ -1,54 +1,27 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-    <button v-b-toggle.sidebar-wrapper class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="#"
-            >Home <span class="sr-only">(current)</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Dropdown
-          </a>
-          <div
-            class="dropdown-menu dropdown-menu-right"
-            aria-labelledby="navbarDropdown"
-          >
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <div>
+    <b-navbar toggleable="lg" type="light" variant="light">
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-collapse" is-nav>
+        <!-- Right aligned nav items -->
+        <b-navbar-nav class="ml-auto">
+          <b-navbar-nav>
+            <b-nav-item href="#">Тренировки</b-nav-item>
+            <b-nav-item href="#">Мои тренировки</b-nav-item>
+            <b-nav-item href="#">Статистика</b-nav-item>
+            <b-nav-item href="#">Блог</b-nav-item>
+            <b-nav-item href="#">Прогнозирование</b-nav-item>
+          </b-navbar-nav>
+          <b-nav-item-dropdown right>
+            <!-- Using 'button-content' slot -->
+            <template v-slot:button-content>
+              <em>Аккаунт</em>
+            </template>
+            <b-dropdown-item href="#">Мой профиль</b-dropdown-item>
+            <b-dropdown-item href="#">Выйти</b-dropdown-item>
+          </b-nav-item-dropdown>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+  </div>
 </template>
-
-https://startbootstrap.github.io/startbootstrap-simple-sidebar/
