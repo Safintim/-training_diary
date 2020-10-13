@@ -4,10 +4,11 @@ from django.contrib.auth import get_user_model
 
 class TrainingProgramm(models.Model):
     title = models.CharField('Название', max_length=100)
-    description = models.TextField('Описание')
+    description = models.TextField('Описание', blank=True, null=True)
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
     exercises = models.ManyToManyField(
         'training.Exercise',
+        blank=True,
         verbose_name='Упражнения',
     )
     author = models.ForeignKey(
@@ -28,7 +29,12 @@ class TrainingProgramm(models.Model):
 class Exercise(models.Model):
     title = models.CharField('Название', max_length=100)
     description = models.TextField('Описание')
-    link = models.URLField('Ссылка на демонстрацию', max_length=200)
+    link = models.URLField(
+        'Ссылка на демонстрацию',
+        max_length=200,
+        null=True,
+        blank=True,
+    )
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
     user = models.ForeignKey(
         get_user_model(),
@@ -43,4 +49,3 @@ class Exercise(models.Model):
 
     def __str__(self):
         return self.title
-
