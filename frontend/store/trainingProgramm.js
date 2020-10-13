@@ -16,4 +16,7 @@ export const actions = {
         commit('setTrainingPrograms', programms);
     },
 };
-// TO DO INSTALL AXIOS
+
+export const getters = {
+    trainingPrograms: state => state.trainingPrograms,
+};

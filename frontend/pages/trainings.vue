@@ -12,6 +12,7 @@
 import TrainingProgramm from '~/components/TrainingProgramm.vue'
 
 export default {
+  
   components: {
     TrainingProgramm
   }

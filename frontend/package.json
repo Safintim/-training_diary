@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.12.2",
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.17.3",
     "nuxt": "^2.0.0",
