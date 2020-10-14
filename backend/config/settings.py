@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
     'training.apps.TrainingConfig',
+    'api.apps.ApiConfig',
 ]
 
 LIBS_APP = [

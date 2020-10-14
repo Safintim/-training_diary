@@ -7,3 +7,9 @@ class ExerciseSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Exercise
         fields = ('id', 'title')
+
+
+class ExerciseCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Exercise
+        fields = ('title', )
