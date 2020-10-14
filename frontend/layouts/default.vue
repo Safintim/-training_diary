@@ -1,13 +1,15 @@
 <template>
   <div>
     <Navbar />
-    <nuxt />
+    <b-container class="page-content">
+      <nuxt />
+    </b-container>
+    
   </div>
-
 </template>
 
 <script>
-import Navbar from '~/components/Navbar.vue';
+import Navbar from "~/components/Navbar.vue";
 
 export default {
   components: {
@@ -16,6 +18,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+.page-content {
+  margin-top: 20px;
+}
 </style>
 

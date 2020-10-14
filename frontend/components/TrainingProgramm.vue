@@ -1,18 +1,34 @@
 <template>
   <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=20"
-    img-alt="Image"
-    img-top
+    :title="training.title"
     tag="article"
     style="max-width: 20rem"
-    class="mb-2"
+    class="training-card mb-2"
   >
+    <hr />
     <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      {{ training.description }}
     </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
+    <b-card-text> Упражнения: </b-card-text>
+    <b-card-text>
+      <p v-for="exercise in training.exercises" :key="exercise.id">{{ exercise.title }}</p>
+    </b-card-text>
   </b-card>
 </template>
+
+<script>
+export default {
+  props: {
+    training: {
+      type: Object,
+      default() {},
+    },
+  },
+};
+</script>
+
+<style scoped>
+.training-card {
+  cursor: pointer;
+}
+</style>
