@@ -28,7 +28,7 @@ class TrainingProgramm(models.Model):
 
 class Exercise(models.Model):
     title = models.CharField('Название', max_length=100)
-    description = models.TextField('Описание')
+    description = models.TextField('Описание', blank=True, null=True)
     link = models.URLField(
         'Ссылка на демонстрацию',
         max_length=200,

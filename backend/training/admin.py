@@ -4,6 +4,7 @@ from jet.admin import CompactInline
 from training import models
 
 
+# TODO создать отдельную модель для м2м
 class ExercisesCompactInline(CompactInline):
     model = models.TrainingProgramm.exercises.through
     extra = 0
