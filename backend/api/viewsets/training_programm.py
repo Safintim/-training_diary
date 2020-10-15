@@ -13,14 +13,15 @@ User = get_user_model()
 
 
 class TrainingProgrammViewSet(viewsets.ModelViewSet):
-    http_method_names = ('get', 'post', 'delete', 'update')
+    http_method_names = ('get', 'post', 'delete', 'put')
     permission_classes = (permissions.IsAuthenticated, )
     queryset = models.TrainingProgramm.objects.all()
     pagination_class = None
     serializer_class = TrainingProgrammListSerializer
     serializer_action_classes = {
         'list': TrainingProgrammListSerializer,
-        'create': TrainingProgrammCreateSerializer
+        'create': TrainingProgrammCreateSerializer,
+        'update': TrainingProgrammCreateSerializer,
     }
     # for debug
     admin = User.objects.filter(is_superuser=True).first()
@@ -41,3 +42,6 @@ class TrainingProgrammViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
+
+    def update(self, request, *args, **kwargs):
+        return super().update(request, args, kwargs, partial=True)

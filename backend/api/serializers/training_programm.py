@@ -31,7 +31,27 @@ class TrainingProgrammCreateSerializer(serializers.ModelSerializer):
         return training
 
     def update(self, instance, validated_data):
-        super().update(instance, validated_data)
-        # TODO добавить обновление
-        # validated_data.pop(exercises, [])
-        # for attr, value in validated_data.items():
+        exercises = validated_data.pop('exercises', [])
+        instance = update_instance(instance, validated_data)
+
+        exercises_obj = models.Exercise.objects.filter(
+            id__in=[e.get('id') for e in exercises]
+        )
+        for obj in exercises_obj:
+            exercise = get_exercise(exercises, obj.id)
+            update_instance(obj, exercise)
+
+        return instance
+
+
+def get_exercise(exercises, ident):
+    for e in exercises:
+        if e.get('id') == ident:
+            return e
+
+
+def update_instance(instance, data):
+    for attr, value in data.items():
+        setattr(instance, attr, value)
+    instance.save()
+    return instance
