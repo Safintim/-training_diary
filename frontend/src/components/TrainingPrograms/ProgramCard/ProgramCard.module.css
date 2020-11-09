@@ -1,0 +1,29 @@
+.program {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.img {
+    text-align: center;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+.title {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.description {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.btnStart {
+    text-align: center;
+}

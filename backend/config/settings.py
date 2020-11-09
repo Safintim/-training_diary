@@ -49,6 +49,7 @@ LIBS_APP = [
     'rest_framework.authtoken',
     'rest_framework_filters',
     'djangorestframework_camel_case',
+    'taggit'
 ]
 
 INSTALLED_APPS += LIBS_APP

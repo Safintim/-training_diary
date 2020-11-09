@@ -87,4 +87,3 @@ class CreateTrainingProgrammTest(test.APITestCase):
             models.Exercise.objects.first().title,
             data_with_id['exercises'][0]['title'],
         )
-        # TODO test

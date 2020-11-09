@@ -1,0 +1,27 @@
+@import '~antd/dist/antd.css';
+
+.appWrapper {
+    margin: 0 auto;
+    display: grid;
+    /* width: 1500px; */
+    grid-template-areas:
+    "sidebar navbar"
+    "sidebar appContent";
+    grid-template-rows: 1fr 18fr;
+    grid-template-columns: 1fr 10fr;
+    height: 100vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.appContent {
+    grid-area: appContent;
+    background-color: rgb(255, 255, 255);
+    padding: 60px 50px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:visited {
+    color: black;
+}

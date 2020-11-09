@@ -1,0 +1,22 @@
+.program {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* align horizontal */
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    
+}
+
+.img {
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.img img{
+    width: 100px;
+}
+

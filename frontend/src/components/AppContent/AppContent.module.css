@@ -1,0 +1,5 @@
+.appContent {
+    grid-area: appContent;
+    background-color: coral;
+    padding: 40px;
+}

@@ -1,0 +1,19 @@
+.navbar {
+    grid-area: navbar;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.navMenu {
+
+}
+
+.navItem {
+    font-size: 16px;
+    cursor: pointer;
+}
+
