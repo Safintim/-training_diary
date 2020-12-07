@@ -37,4 +37,6 @@ class Tags extends React.Component {
     }
 }
 
+const Ta
+
 export default Tags;

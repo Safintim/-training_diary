@@ -14,7 +14,7 @@ import ProgramForm from './components/TrainingPrograms/ProgramForm/ProgramForm';
 import Program from './components/TrainingPrograms/Program/Program';
 import ExerciseItem from './components/Exercises/ExerciseItem/ExerciseItem';
 import ExerciseForm from './components/Exercises/ExerciseForm/ExerciseForm';
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = (props) => {
     return (
@@ -42,6 +42,10 @@ const App = (props) => {
                     <Route
                         path='/program'
                         render={() => <Program />}
+                    />
+                    <Route 
+                        path='/training-programs'
+                        render={() => <TrainingProgram />}
                     />
                     <Route 
                         path='/training-programs'
