@@ -153,6 +153,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 IMAGE_UPLOAD_DIR = 'static/upload/images'
+DEFAULT_IMAGE_200 = 'static/images/200.png'
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (

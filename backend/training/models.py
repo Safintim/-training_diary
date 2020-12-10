@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.conf import settings
 
 from taggit.managers import TaggableManager
 
@@ -7,6 +8,7 @@ from taggit.managers import TaggableManager
 class TrainingProgram(models.Model):
     title = models.CharField('Название', max_length=100)
     description = models.TextField('Описание', blank=True, null=True)
+    image = models.ImageField('Изображение', upload_to=settings.IMAGE_UPLOAD_DIR, default=settings.DEFAULT_IMAGE_200)
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
     exercises = models.ManyToManyField(
         'training.Exercise',

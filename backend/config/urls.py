@@ -12,6 +12,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('', include('main.urls')),
+    path('', include('training.urls')),
 ]
 
 if settings.DEBUG:
