@@ -2,7 +2,7 @@ from django.db.models import Q
 from django.views import generic
 
 from account.models import User
-from training import models
+from training import models, forms
 
 
 class TrainingProgramListView(generic.ListView):
@@ -22,6 +22,8 @@ class TrainingProgramDetailView(generic.DetailView):
     model = models.TrainingProgram
     context_object_name = 'program'
 
-class CreateTrainingProgramView(generic.CreateView):
+
+class CreateTrainingProgramView(generic.FormView):
     model = models.TrainingProgram
-    fields = ('title', 'description', 'image', 'exercises')
+    template_name = 'training/trainingprogram_form.html'
+    form_class = forms.TrainingProgramForm
