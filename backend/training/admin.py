@@ -6,12 +6,12 @@ from training import models
 
 # TODO создать отдельную модель для м2м
 class ExercisesCompactInline(CompactInline):
-    model = models.TrainingProgramm.exercises.through
+    model = models.TrainingProgram.exercises.through
     extra = 0
 
 
-@admin.register(models.TrainingProgramm)
-class TrainProgrammAdmin(admin.ModelAdmin):
+@admin.register(models.TrainingProgram)
+class TrainProgramAdmin(admin.ModelAdmin):
     list_display = list_display_links = (
         'id',
         'title',

@@ -3,8 +3,8 @@ from django.contrib.auth import get_user_model
 from rest_framework import viewsets, permissions
 
 from api.serializers.training_programm import (
-    TrainingProgrammListSerializer,
-    TrainingProgrammCreateSerializer,
+    TrainingProgramListSerializer,
+    TrainingProgramCreateSerializer,
 )
 from training import models
 
@@ -12,16 +12,16 @@ from training import models
 User = get_user_model()
 
 
-class TrainingProgrammViewSet(viewsets.ModelViewSet):
+class TrainingProgramViewSet(viewsets.ModelViewSet):
     http_method_names = ('get', 'post', 'delete', 'put')
     permission_classes = (permissions.IsAuthenticated, )
-    queryset = models.TrainingProgramm.objects.all()
+    queryset = models.TrainingProgram.objects.all()
     pagination_class = None
-    serializer_class = TrainingProgrammListSerializer
+    serializer_class = TrainingProgramListSerializer
     serializer_action_classes = {
-        'list': TrainingProgrammListSerializer,
-        'create': TrainingProgrammCreateSerializer,
-        'update': TrainingProgrammCreateSerializer,
+        'list': TrainingProgramListSerializer,
+        'create': TrainingProgramCreateSerializer,
+        'update': TrainingProgramCreateSerializer,
     }
     # for debug
     admin = User.objects.filter(is_superuser=True).first()

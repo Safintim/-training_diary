@@ -4,25 +4,25 @@ from api.serializers.exercise import ExerciseSerializer
 from training import models
 
 
-class TrainingProgrammListSerializer(serializers.ModelSerializer):
+class TrainingProgramListSerializer(serializers.ModelSerializer):
     exercises = ExerciseSerializer(many=True)
 
     class Meta:
-        model = models.TrainingProgramm
+        model = models.TrainingProgram
         fields = ('id', 'title', 'description', 'exercises')
 
 
-class TrainingProgrammCreateSerializer(serializers.ModelSerializer):
+class TrainingProgramCreateSerializer(serializers.ModelSerializer):
     exercises = ExerciseSerializer(many=True)
 
     class Meta:
-        model = models.TrainingProgramm
+        model = models.TrainingProgram
         fields = ('title', 'description', 'exercises')
 
     def create(self, validated_data):
         user = self.context['request'].user
         exercises = validated_data.pop('exercises', [])
-        training = models.TrainingProgramm.objects.create(**validated_data)
+        training = models.TrainingProgram.objects.create(**validated_data)
         exercise_objs = [
             models.Exercise.objects.create(**exercise, user=user)
             for exercise in exercises

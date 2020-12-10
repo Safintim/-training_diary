@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from taggit.managers import TaggableManager
 
 
-class TrainingProgramm(models.Model):
+class TrainingProgram(models.Model):
     title = models.CharField('Название', max_length=100)
     description = models.TextField('Описание', blank=True, null=True)
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
@@ -61,7 +61,7 @@ class Training(models.Model):
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
     updated_at = models.DateTimeField('Дата обновления', auto_now=True)
     program = models.ForeignKey(
-        TrainingProgramm,
+        TrainingProgram,
         on_delete=models.CASCADE,
         verbose_name='Программа',
     )

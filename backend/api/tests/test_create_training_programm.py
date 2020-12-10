@@ -7,7 +7,7 @@ from training import models
 User = get_user_model()
 
 
-class CreateTrainingProgrammTest(test.APITestCase):
+class CreateTrainingProgramTest(test.APITestCase):
     def setUp(self):
         self.user = User.objects.create(
             email='test@mail.ru', password='123123'
@@ -24,11 +24,11 @@ class CreateTrainingProgrammTest(test.APITestCase):
                 }
             ]
         }
-        url = reverse('training_programms-list')
+        url = reverse('training_programs-list')
         response = self.client.post(url, data, format='json')
         self.assertEqual(response.status_code, 201)
         self.assertEqual(
-            models.TrainingProgramm.objects.first().title,
+            models.TrainingProgram.objects.first().title,
             data['title']
         )
         self.assertEqual(
@@ -36,7 +36,7 @@ class CreateTrainingProgrammTest(test.APITestCase):
             data['exercises'][0]['title']
         )
         self.assertTrue(
-            models.TrainingProgramm.objects.filter(
+            models.TrainingProgram.objects.filter(
                 exercises__title=data['exercises'][0]['title']
             ).exists()
         )
@@ -49,7 +49,7 @@ class CreateTrainingProgrammTest(test.APITestCase):
         exercise_data = {
             'title': 'Exercises'
         }
-        training = models.TrainingProgramm.objects.create(
+        training = models.TrainingProgram.objects.create(
             **training_data,
             author=self.user
         )
@@ -66,7 +66,7 @@ class CreateTrainingProgrammTest(test.APITestCase):
                 }
             ]
         }
-        url = reverse('training_programms-detail', args=[training.id])
+        url = reverse('training_programs-detail', args=[training.id])
         response1 = self.client.put(url, data_not_id, format='json')
         self.assertEqual(response1.status_code, 200)
         self.assertNotEqual(

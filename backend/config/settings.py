@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'training.apps.TrainingConfig',
     'api.apps.ApiConfig',
+    'main.apps.MainConfig',
 ]
 
 LIBS_APP = [
@@ -69,7 +70,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -151,6 +152,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+IMAGE_UPLOAD_DIR = 'static/upload/images'
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = (
+    BASE_DIR / 'static',
+)
 
 AUTH_USER_MODEL = 'account.User'
 
